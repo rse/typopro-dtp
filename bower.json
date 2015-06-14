@@ -1,8 +1,8 @@
 {
     "name":        "typopro-dtp",
-    "version":     "3.0.1",
+    "version":     "3.0.4",
     "description": "Fonts for Professional Typography (DTP)",
-    "homepage":    "https://github.com/rse/typopro",
+    "homepage":    "https://github.com/rse/typopro-dtp",
     "license":     "MIT AND Apache AND OFL AND CC0",
     "authors": [
         "Ralf S. Engelschall <rse@engelschall.com>"
