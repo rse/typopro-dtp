@@ -1,6 +1,6 @@
 {
     "name":        "typopro-dtp",
-    "version":     "3.5.0",
+    "version":     "3.6.0",
     "description": "Fonts for Professional Typography (DTP)",
     "homepage":    "https://github.com/rse/typopro-dtp",
     "license":     "MIT AND Apache-2.0 AND OFL-1.1 AND CC0-1.0",
@@ -21,10 +21,10 @@
     },
     "dependencies": {
         "promise":   "~7.1.1",
-        "request":   "~2.78.0",
+        "request":   "~2.81.0",
         "sprintfjs": "~1.2.3",
         "tar":       "~2.2.1",
-        "rimraf":    "~2.5.4"
+        "rimraf":    "~2.6.1"
     },
     "scripts": {
         "install":   "node ./typopro-npm.js install",
