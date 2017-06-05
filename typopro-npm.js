@@ -44,6 +44,7 @@ var promise       = require("promise");
 var request       = require("request");
 var tar           = require("tar");
 var rimraf        = require("rimraf");
+var mkdirp        = require("mkdirp");
 
 /*  download data from URL  */
 var downloadData = function (url) {
@@ -105,7 +106,7 @@ var extractTarball = function (tarball, destdir, stripdirs) {
     return new promise(function (resolve, reject) {
         fs.createReadStream(tarball)
             .pipe(zlib.createGunzip())
-            .pipe(tar.Extract({ path: destdir, strip: stripdirs }))
+            .pipe(tar.extract({ cwd: destdir, strip: stripdirs }))
             .on("error", function (error) { reject(error); })
             .on("end", function () { resolve(); });
     });
@@ -131,6 +132,7 @@ if (process.argv[2] === "install") {
         downloadData(url).then(function (data) {
             console.log("++ unpacking externalized TypoPRO distribution content");
             fs.writeFileSync(destfile, data, { encoding: null });
+            mkdirp.sync(destdir1);
             extractTarball(destfile, destdir1, 1).then(function () {
                 fs.renameSync(destdir2, destdir3);
                 rimraf.sync(destdir1);
